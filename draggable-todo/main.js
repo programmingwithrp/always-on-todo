@@ -1,7 +1,13 @@
 const { app, BrowserWindow } = require('electron');
 let win;
 
+
+
 app.on('ready', () => {
+app.setLoginItemSettings({
+    openAtLogin: true, // Automatically start app
+    path: app.getPath('exe'), // Path to the app's executable
+    });
   win = new BrowserWindow({
     width: 310,
     height: 400,
